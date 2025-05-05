@@ -13,19 +13,14 @@ RUN git clone --depth 1 \
     https://github.com/huxiuhan/ComfyUI-InstantID.git \
     /workspace/ComfyUI/custom_nodes/comfyui_instantid
 
-# (Optional) LoRA-Inject can be added later via ComfyUI Manager
+# (Optional) LoRA-Inject can be added later via the Manager UI
 # RUN git clone --depth 1 \
 #     https://github.com/kohya-ss/comfyui-lora-inject.git \
 #     /workspace/ComfyUI/custom_nodes/comfyui_lora_inject
 
-# Recompile Triton for broad GPU support
-ENV TORCH_CUDA_ARCH_LIST="7.5;8.0;8.6;8.9;12.0"
-RUN python3 -m pip uninstall -y triton \
- && python3 -m pip install --force-reinstall triton
-
 # Build the SVD-xt CUDA kernels
 RUN cd /workspace/ComfyUI/custom_nodes/ComfyUI-Stable-Video-Diffusion \
- && python setup.py install
+ && python3 setup.py install
 
 WORKDIR /workspace/ComfyUI
-ENTRYPOINT ["python", "main.py", "--listen", "--port", "8080"]
+ENTRYPOINT ["python3", "main.py", "--listen", "--port", "8080"]
