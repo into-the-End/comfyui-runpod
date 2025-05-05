@@ -8,9 +8,9 @@ RUN git clone --depth 1 \
     https://github.com/thecooltechguy/ComfyUI-Stable-Video-Diffusion.git \
     /workspace/ComfyUI/custom_nodes/ComfyUI-Stable-Video-Diffusion
 
-# install InstantID nodes
+# Install InstantID nodes
 RUN git clone --depth 1 \
-    https://github.com/comfyanonymous/ComfyUI-InstantID.git \
+    https://github.com/huxiuhan/ComfyUI-InstantID.git \
     /workspace/ComfyUI/custom_nodes/comfyui_instantid
 
 # (temporarily skip the LoRA-Inject clone—let’s leave that to the Manager UI for now)
