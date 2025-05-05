@@ -1,4 +1,4 @@
-FROM ai-dock/comfyui:latest-cuda
+FROM decentralize/comfyui:latest
 
 # Install git
 RUN apt-get update && apt-get install -y git
