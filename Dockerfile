@@ -1,4 +1,4 @@
-FROM ghcr.io/comfyanonymous/comfyui:latest
+FROM ai-dock/comfyui:latest-cuda
 
 # Install git
 RUN apt-get update && apt-get install -y git
